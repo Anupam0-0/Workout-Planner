@@ -18,8 +18,8 @@ const workoutForm = () => {
         }
 
         try {
-            if(!title || !reps || !load) {
-                throw 'All fields are required'
+            if(!title ) {
+                throw 'Title is required'
             }
 
 
@@ -47,10 +47,13 @@ const workoutForm = () => {
 
     return (
         <div>
-            <form className='flex h-fit flex-col gap-2 border px-12 lg:px-16 py-8  rounded-lg shadow-sm'
+            <form className='md:w-[35vw] flex h-fit flex-col gap-2 mt-5  border px-12 lg:px-16 py-8 rounded-lg shadow-sm bg-slate-50'
                 onSubmit={handleSubmit}
+                
             >
-                <h3 className='text-3xl pb-4'>Add a New Workout</h3>
+                <h3 className='text-3xl '>Add a New Workout</h3>
+                <hr className="ml-[88px] bg-gradient-to-r from-red-400 via-red-400 to-slate-50 h-1 rounded-sm  w-16 -mt-2 mb-4" />
+
                 <label className='text-xl'> Excercise Title: </label>
                 <input type="text" value={title}
                     onChange={(e) => setTitle(e.target.value)}
@@ -66,8 +69,7 @@ const workoutForm = () => {
                 />
 
                 <label className='text-xl'> Load: </label>
-                <input type="number" value={load}
-                    onChange={(e) => setLoad(e.target.value)}
+                <input type="number"
                     placeholder='Enter the load'
                     className='py-1 px-4 rounded-md outline-none'
                 />

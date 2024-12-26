@@ -6,7 +6,7 @@ const router = express.Router();
 //get all workouts
 const getAllWorkouts = async (req, res) => {
   try {
-    const workouts = await Workout.find({}).sort({ date: -1 });
+    const workouts = await Workout.find({}).sort({ createdAt: -1 });
     res.json(workouts);
   } catch (err) {
     res.json({ message: err });
